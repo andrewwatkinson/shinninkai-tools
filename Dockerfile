@@ -1,6 +1,9 @@
 # Use the official Python 3.12 image from the Docker Hub
 FROM python:3.12-slim
 
+# make the /app directory
+RUN mkdir /app
+
 RUN apt-get update && apt-get install -y \
     build-essential \
     curl \
@@ -18,7 +21,7 @@ WORKDIR /app
 RUN ls -la
 
 # Install the dependencies
-RUN pip install --no-cache-dir -r /app/requirements.txt
+RUN pip install --no-cache-dir -r requirements.txt
 
 # Expose the port that Streamlit will run on
 EXPOSE 8501
