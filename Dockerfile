@@ -11,7 +11,7 @@ RUN apt-get update && apt-get install -y \
     git \
     && rm -rf /var/lib/apt/lists/*
 
-RUN git clone https://github.com/streamlit/streamlit-example.git .
+RUN git clone https://github.com/andrewwatkinson/shinninkai-tools.git .
 
 # Install the dependencies
 RUN pip install -r requirements.txt
